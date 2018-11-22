@@ -9,19 +9,3 @@ burkardt_polynomial_value <- function(c, Powers, x) {
     .Call(`_mpolynomial_burkardt_polynomial_value`, c, Powers, x)
 }
 
-rcpp_differentiate <- function(Coeffs, Degrees, DWR) {
-    .Call(`_mpolynomial_rcpp_differentiate`, Coeffs, Degrees, DWR)
-}
-
-rcpp_evaluate <- function(Coeffs, Degrees, Values) {
-    .Call(`_mpolynomial_rcpp_evaluate`, Coeffs, Degrees, Values)
-}
-
-rcpp_rank_grlex <- function(Powers) {
-    .Call(`_mpolynomial_rcpp_rank_grlex`, Powers)
-}
-
-rcpp_unrank_grlex <- function(m, rank) {
-    .Call(`_mpolynomial_rcpp_unrank_grlex`, m, rank)
-}
-
