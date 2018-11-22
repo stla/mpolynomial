@@ -306,6 +306,54 @@ Rcpp::List burkardt_polynomial_dif (
 }
 //****************************************************************************80
 
+double* burkardt_mono_value ( int m, int n, Rcpp::IntegerVector f, Rcpp::NumericMatrix x )
+{
+  int i;
+  int j;
+  double *v;
+  
+  v = new double[n];
+  
+  for ( j = 0; j < n; j++ )
+  {
+    v[j] = 1.0;
+    for ( i = 0; i < m; i++ )
+    {
+      v[j] = v[j] * pow ( x[i+j*m], f[i] );
+    }
+  }
+  
+  return v;
+}
+//****************************************************************************80
+
+// [[Rcpp::export]]
+Rcpp::NumericVector burkardt_polynomial_value ( 
+    Rcpp::NumericVector c, Rcpp::IntegerMatrix Powers,  
+                           Rcpp::NumericMatrix x )
+{
+  int j;
+  int k;
+  Rcpp::NumericMatrix tx = Rcpp::transpose(x);
+  int n = x.nrow();
+  Rcpp::NumericVector p(n);
+  int m = x.ncol();
+  int o = c.size();
+  
+  for ( j = 0; j < o; j++ )
+  {
+    Rcpp::IntegerVector f = Powers(j, Rcpp::_);
+    double* v = burkardt_mono_value ( m, n, f, tx );
+    for ( k = 0; k < n; k++ )
+    {
+      p[k] = p[k] + c[j] * v[k];
+    }
+    delete [] v;
+  }
+  
+  return p;
+}
+
 
 // [[Rcpp::export]]
 Rcpp::List rcpp_differentiate(

@@ -18,6 +18,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// burkardt_polynomial_value
+Rcpp::NumericVector burkardt_polynomial_value(Rcpp::NumericVector c, Rcpp::IntegerMatrix Powers, Rcpp::NumericMatrix x);
+RcppExport SEXP _mpolynomial_burkardt_polynomial_value(SEXP cSEXP, SEXP PowersSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type c(cSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(burkardt_polynomial_value(c, Powers, x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_differentiate
 Rcpp::List rcpp_differentiate(Rcpp::NumericVector Coeffs, Rcpp::IntegerVector Degrees, Rcpp::IntegerVector DWR);
 RcppExport SEXP _mpolynomial_rcpp_differentiate(SEXP CoeffsSEXP, SEXP DegreesSEXP, SEXP DWRSEXP) {
@@ -70,6 +83,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_mpolynomial_burkardt_polynomial_dif", (DL_FUNC) &_mpolynomial_burkardt_polynomial_dif, 3},
+    {"_mpolynomial_burkardt_polynomial_value", (DL_FUNC) &_mpolynomial_burkardt_polynomial_value, 3},
     {"_mpolynomial_rcpp_differentiate", (DL_FUNC) &_mpolynomial_rcpp_differentiate, 3},
     {"_mpolynomial_rcpp_evaluate", (DL_FUNC) &_mpolynomial_rcpp_evaluate, 3},
     {"_mpolynomial_rcpp_rank_grlex", (DL_FUNC) &_mpolynomial_rcpp_rank_grlex, 1},

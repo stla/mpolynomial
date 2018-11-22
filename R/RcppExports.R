@@ -5,6 +5,10 @@ burkardt_polynomial_dif <- function(c1, Powers, dif) {
     .Call(`_mpolynomial_burkardt_polynomial_dif`, c1, Powers, dif)
 }
 
+burkardt_polynomial_value <- function(c, Powers, x) {
+    .Call(`_mpolynomial_burkardt_polynomial_value`, c, Powers, x)
+}
+
 rcpp_differentiate <- function(Coeffs, Degrees, DWR) {
     .Call(`_mpolynomial_rcpp_differentiate`, Coeffs, Degrees, DWR)
 }
