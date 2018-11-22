@@ -1,0 +1,16 @@
+Package: mpolynomial
+Type: Package
+Title: Multivariate Polynomials
+Version: 1.0
+Date: 2018-11-22
+Author@R: c(person("Stéphane", "Laurent", role=c("aut,cre")),
+             person("John", "Burkardt", role="cph")
+Maintainer: Stéphane Laurent <laurent_step@yahoo.fr>
+Description: Differentiates and evaluates multivariate polynomials.
+License: GPL (>= 2)
+Imports: Rcpp (>= 0.12.18)
+Depends: R (>= 3.1.0), 
+         spray
+LinkingTo: Rcpp
+RoxygenNote: 6.0.1
+Encoding: UTF-8
