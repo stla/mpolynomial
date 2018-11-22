@@ -261,8 +261,8 @@ Rcpp::List burkardt_compress(int o1, double c1[], int e1[], int m)
   std::vector<double>(c2.begin(), c2.begin() + o2).swap(c2);
   
   Rcpp::List out = Rcpp::List::create(
-    Rcpp::Named("coefficients") = c2, 
-    Rcpp::Named("powers") = Powers);
+    Rcpp::Named("powers") = Powers,
+    Rcpp::Named("coefficients") = c2);
   return out;
 }
 //****************************************************************************80
