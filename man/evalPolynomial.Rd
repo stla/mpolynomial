@@ -4,7 +4,7 @@
 \alias{evalPolynomial}
 \title{Evaluate a polynomial}
 \usage{
-evalPolynomial(poly, coefficients = NULL, powers = NULL, X)
+evalPolynomial(poly, coefficients = NULL, powers = NULL)
 }
 \arguments{
 \item{poly}{a polynomial given as a list of two elements: the powers in an 
@@ -13,14 +13,18 @@ like a \code{\link[spray]{spray}} object}
 
 \item{coefficients, powers}{an alternative way to input the polynomial, to use 
 with missing \code{poly}}
-
-\item{X}{a matrix whose rows are the evaluation points}
 }
 \value{
-A numeric vector, the values of the polynomial at the points given by 
-\code{X}.
+A function with one argument, a matrix whose rows are the evaluation 
+points, and which returns the values of the polynomial at these points.
 }
 \description{
 Evaluation of a multivariate polynomial at some values of the 
 variables.
+}
+\examples{
+f0 <- function(x,y) (x+y)^2 - 2*x*y
+P <- f0(lone(1,2),lone(2,2))
+f <- evalPolynomial(P)
+f(rbind(c(1,1),c(2,2),c(3,3)))
 }
