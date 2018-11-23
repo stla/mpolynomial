@@ -17,7 +17,7 @@ int i4vec_sum ( int n, int a[] );
 //void mono_total_next_grlex ( int m, int n, int x[] );
 //int *mono_unrank_grlex ( int m, int rank );
 //int mono_upto_enum ( int m, int n );
-double *mono_value ( int m, int n, int f[], double x[] );
+//double *mono_value ( int m, int n, int f[], double x[] );
 void perm_check0 ( int n, int p[] );
 //void polynomial_add ( int o1, double c1[], int e1[], int o2, double c2[], 
   //int e2[], int &o, double c[], int e[] );

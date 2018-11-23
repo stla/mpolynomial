@@ -1188,56 +1188,56 @@ int i4vec_sum ( int n, int a[] )
 // }
 //****************************************************************************80
 
-double *mono_value ( int m, int n, int f[], double x[] )
-
-//****************************************************************************80
-//
-//  Purpose:
-//
-//    MONO_VALUE evaluates a monomial.
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license.
-//
-//  Modified:
-//
-//    10 December 2013
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    Input, int M, the spatial dimension.
-//
-//    Input, int N, the number of evaluation points.
-//
-//    Input, int F[M], the exponents of the monomial.
-//
-//    Input, double X[M*N], the coordinates of the evaluation points.
-//
-//    Output, double MONO_VALUE[N], the value of the monomial at X.
-//
-{
-  int i;
-  int j;
-  double *v;
-
-  v = new double[n];
-
-  for ( j = 0; j < n; j++ )
-  {
-    v[j] = 1.0;
-    for ( i = 0; i < m; i++ )
-    {
-      v[j] = v[j] * pow ( x[i+j*m], f[i] );
-    }
-  }
-
-  return v;
-}
+// double *mono_value ( int m, int n, int f[], double x[] )
+// 
+// //****************************************************************************80
+// //
+// //  Purpose:
+// //
+// //    MONO_VALUE evaluates a monomial.
+// //
+// //  Licensing:
+// //
+// //    This code is distributed under the GNU LGPL license.
+// //
+// //  Modified:
+// //
+// //    10 December 2013
+// //
+// //  Author:
+// //
+// //    John Burkardt
+// //
+// //  Parameters:
+// //
+// //    Input, int M, the spatial dimension.
+// //
+// //    Input, int N, the number of evaluation points.
+// //
+// //    Input, int F[M], the exponents of the monomial.
+// //
+// //    Input, double X[M*N], the coordinates of the evaluation points.
+// //
+// //    Output, double MONO_VALUE[N], the value of the monomial at X.
+// //
+// {
+//   int i;
+//   int j;
+//   double *v;
+// 
+//   v = new double[n];
+// 
+//   for ( j = 0; j < n; j++ )
+//   {
+//     v[j] = 1.0;
+//     for ( i = 0; i < m; i++ )
+//     {
+//       v[j] = v[j] * pow ( x[i+j*m], f[i] );
+//     }
+//   }
+// 
+//   return v;
+// }
 //****************************************************************************80
 
 void perm_check0 ( int n, int p[] )
